@@ -1,0 +1,17 @@
+.customScroll{
+    overflow-y: scroll
+}
+
+.customScroll::-webkit-scrollbar {
+    width: 5px;
+}
+ 
+.customScroll::-webkit-scrollbar-track {
+    opacity: 0;
+}
+ 
+.customScroll::-webkit-scrollbar-thumb {
+    background-color: rgba(128, 0, 128, 0.7);
+    outline: 1px solid slategrey;    
+    border-radius: 50px;
+}

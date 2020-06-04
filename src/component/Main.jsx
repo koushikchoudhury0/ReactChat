@@ -9,9 +9,9 @@ import ChatIcon from "@material-ui/icons/ChatBubbleOutline"
 import RequestIcon from "@material-ui/icons/ContactsOutlined"
 import "../css/Main.css"
 import RequestList from './RequestList'
-import { Fab } from '@material-ui/core'
-import AddIcon from "@material-ui/icons/Add"
-import RequestDialog from "./RequestDialog"
+//import { Fab } from '@material-ui/core'
+//import AddIcon from "@material-ui/icons/Add"
+//import RequestDialog from "./RequestDialog"
 import Input from './Input'
 import Conversation from "./Conversation"
 //import Friend from './Friend';
@@ -119,24 +119,22 @@ class Main extends Component {
                         <div className="col-lg-8" style={{padding: "0", height: "100%", position: "relative"}}>
                             {this.renderChatWindow()}
                         </div>
-                        <div className="col-lg-4" id="panel-window" style={{background: "#fff", height: "100%", maxHeight: "100%", overflowY: "scroll", padding: "0"}}>
-                            <div style={{padding: "0px 10px"}}>
-                                
-                                <div id="no-scroll" style={{position: "sticky", top: "0", background: "#ffffff", paddingBottom: "5px"}}>
+                        <div className="col-lg-4" id="panel-window" style={{background: "#fff", height: "100%", maxHeight: "100%", overflowY: "hidden", padding: "0"}}>
+                            <div style={{padding: "0px 10px", height: "100%"}}>                                
+                                <div style={{height: "24%", background: "#ffffff", paddingBottom: "5px"}}>
                                     <UserDetails history={this.props.history} socket={this.state.socket} />                                    
                                     <div style={{marginTop: "10px", marginBottom: "10px"}}>
                                         <button className="tabButton selected" onClick={(e) => { this.selectTab(e.currentTarget, 1) }}><span> <ChatIcon /> </span></button>
                                         <button className="tabButton" onClick={(e) => { this.selectTab(e.currentTarget, 2) }}style={{marginLeft: "10px"}}><span> <RequestIcon /> </span></button>
-                                        {this.state.selectedTab === 2?
+                                        {/* {this.state.selectedTab === 2?
                                             <React.Fragment>
-                                                <Fab onClick={ ()=>{ this.foo.openDialog() } } variant="extended" size="small" color="secondary" style={{fontSize: "10px", outline: "none", border: "none", marginLeft: "20px"}} > <AddIcon /></Fab>                                            
-                                                <RequestDialog socket={this.state.socket} ref={(foo) => { this.foo = foo }} />
+                                                <Fab onClick={ ()=>{ this.foo.openDialog() } } variant="extended" size="small" color="secondary" style={{fontSize: "10px", outline: "none", border: "none", marginLeft: "20px"}} > <AddIcon /></Fab>                                                                                            
                                             </React.Fragment>
                                             :
-                                            ""}                                    
+                                            ""} */}                                    
                                     </div>
                                 </div>
-                                <div style={{marginTop: "0px"}}>
+                                <div style={{overflowY: "hidden", height: "76%", marginTop: "0px"}}>
                                     {this.state.selectedTab === 1?
                                         <ChatList current={this.state.currentFriend} chatClickCallback={this.onChatClick} history={this.props.history} socket={this.state.socket} chats={this.state.chats} handleIncomingChat={this.incomingChatCallback} />
                                         :
@@ -153,7 +151,7 @@ class Main extends Component {
         );
     }
 
-    componentDidMount(){        
+    componentDidMount(){                
         //console.log("Connecting to sockets")
         //let socket = io("http://52.66.243.216:3001")
         let socket = io(`${URL}`)

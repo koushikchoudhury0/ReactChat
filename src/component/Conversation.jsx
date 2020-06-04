@@ -38,15 +38,15 @@ class Conversation extends Component {
         var st = this.listElement.scrollTop;
         var sh = this.listElement.scrollHeight;
         var oh = this.listElement.offsetHeight;
-        console.log("ST: ", st, "SH: ", sh, "OH: ", oh, "sh-oh: ", sh-oh)
+        //console.log("ST: ", st, "SH: ", sh, "OH: ", oh, "sh-oh: ", sh-oh)
         if (st > this.vars.lastScrollTop){
-            console.log("Scolled Down")            
+            //console.log("Scolled Down")            
             if (/* this.state.scrolledUp === true */ this.fab.style.visibility === "visible" && st>(sh-oh-100/* -oh */)) {
                 //this.setState({scrolledUp: false})
                 this.fab.style.visibility="hidden"
             }
         } else {
-            console.log("Scolled Up")             
+            //console.log("Scolled Up")             
             if (/* this.state.scrolledUp === false */ this.fab.style.visibility === "hidden" && st<(sh-oh-100/* -oh */)) {
                 //this.setState({scrolledUp: true})
                 this.fab.style.visibility="visible"

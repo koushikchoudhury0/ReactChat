@@ -6,6 +6,7 @@ import Cookies from "js-cookie"
 //import { BrowserRouter as Router, Route } from 'react-router-dom';
 //import io from "socket.io-client"
 import CircularProgress from "@material-ui/core/CircularProgress"
+import "../css/ChatList.css"
 
 class ChatList extends Component {
 
@@ -47,7 +48,7 @@ class ChatList extends Component {
         //console.log("Chats: ", this.props.chats)
         
         return (
-            <div>
+            <div className="customScroll" style={{height: "100%", overflowY: "scroll", paddingRight: "5px"}}>
                 {this.renderChatList()}                
             </div>
         );
