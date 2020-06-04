@@ -16,14 +16,19 @@ class Chat extends Component {
         }
     }
     render() {
-        console.log("CHAT: ", this.props.data) 
+        //console.log("CHAT: ", this.props.data) 
         return (
             <div onClick={() => { this.props.onChatClick(this.props.data.uid, this.props.data.name) }} className="container" style={this.props.selected === true?this.style.isSelected:this.style.notSelected}>
-                
-                <h6 style={{marginBottom: "0", fontWeight: "bold"}}>
-                    {this.props.data.name}
-                    <Badge unread={this.props.data.unread} />
-                </h6>
+                <div className="row">
+                    <div className="col-sm-10 col-md-10 col-lg-10">
+                        <h6 style={{marginBottom: "0", fontWeight: "bold", wordBreak: "break-all"}}>
+                            {this.props.data.name}                            
+                        </h6>
+                    </div>
+                    <div className="col-sm-1 col-md-1 col-lg-1" style={{padding: "0", transform: "translateY(-2px)"}}>
+                        <Badge unread={this.props.data.unread} />
+                    </div>
+                </div>                
                 {this.props.data.lastMsg === null?
                     <p style={{fontSize: "14px", marginBottom: "0", opacity: "0.7"}}>                    
                         <span style={{fontWeight: "bold", fontSize: "12px"}}>Start conversation</span>                    

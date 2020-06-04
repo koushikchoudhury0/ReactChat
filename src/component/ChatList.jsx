@@ -44,7 +44,7 @@ class ChatList extends Component {
 
     render() { 
         //console.log("Rendering ChatList")
-        console.log("Chats: ", this.props.chats)
+        //console.log("Chats: ", this.props.chats)
         
         return (
             <div>
