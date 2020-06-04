@@ -12,7 +12,7 @@ class Chat extends Component {
             paddingBottom: "5px", cursor: "pointer", width: "100%", marginTop: "5px", paddingTop: "8px", background: "#e0dfdf1f", borderRadius: "5px", borderColor: "#eaeaea", borderStyle: "solid", borderWidth: "2px", transition: "0.3s"
         },
         isSelected: {
-            paddingBottom: "5px", cursor: "pointer", width: "100%", marginTop: "10px", marginBottom: "10px", paddingTop: "8px", transition: "0.3s", borderRadius: "0", borderColor: "transparent", borderStyle: "solid", borderWidth: "2px", position: "sticky", top: "0", bottom: "0", background: "transparent", transform: "scale(1.0)", paddingLeft: "3px", opacity: 1 
+            paddingBottom: "5px", cursor: "pointer", width: "100%", marginTop: "10px", marginBottom: "10px", paddingTop: "8px", transition: "0.3s", borderRadius: "0", borderColor: "transparent", borderStyle: "solid", borderWidth: "2px", position: "sticky", top: "0", bottom: "0", background: "white", transform: "scale(1.0)", paddingLeft: "3px", opacity: 1 
         }
     }
     render() {
