@@ -4,10 +4,10 @@ import "../css/Msg.css"
 
 class Msg extends Component {
 
-    constructor(props){
+    /* constructor(props){
         super(props)
         console.log("Msg Props: ", props)
-    }
+    } */
 
     state = { expanded: false }
 
@@ -27,31 +27,31 @@ class Msg extends Component {
             return (this.props.msg.content)        
     }
 
-    render() { 
-        //console.log("Sender: ", this.props.msg.sender, "My Id: ", Cookies.get("id"),  "MyMsg: ", this.props.sender === Cookies.get("id"))
-        //console.log(this.props.msg)
-        let now = new Date().getTime()
+    formatDateHead = (thisDate, ms) => {          
+        let srcDateArr = new Date(ms).toLocaleDateString().split("/")            
+        let thisDateArr = new Date().toLocaleDateString().split("/")        
+        if (srcDateArr[2] !== thisDateArr[2] || srcDateArr[1] !== thisDateArr[1]){
+            return thisDate
+        } else {
+            console.log(parseInt(srcDateArr[0]), "-", parseInt(thisDateArr[0]))
+            let diffDays = Math.abs(parseInt(srcDateArr[0]) - parseInt(thisDateArr[0]))
+            if (diffDays==0) return "Today"
+            else if (diffDays==1) return "Yesterday"
+            else return thisDate
+        }      
+    }
+
+    render() {                 
         let ms = parseInt(String(this.props.msg.msgId).substring(0, 13))
-        let dateArr = new Date(ms).toString().split(" ")        
-        let dateStr = ""
-        let gap = now - ms
-        let msDay = 24*60*60*1000
-        if (gap > 365*msDay) {
-            dateStr = `${dateArr[1]} ${dateArr[2]} ${dateArr[3]}` 
-        } else if (gap > msDay) {
-            dateStr = `${dateArr[1]} ${dateArr[2]}` 
-        }
+        let dateArr = new Date(ms).toString().split(" ")                
         let lastMs = parseInt(String(this.props.lastMoment).substring(0, 13))
         let lastDateArr = new Date(lastMs).toString().split(" ")
         let thisDate = `${dateArr[1]} ${dateArr[2]} ${dateArr[3]}`
-        let lastDate = `${lastDateArr[1]} ${lastDateArr[2]} ${lastDateArr[3]}`
-        console.log("ThisDateArr: ", thisDate, "LastDateArr: ", lastDate)
-        if (thisDate !== lastDate) console.log("Show Date: ", thisDate)
+        let lastDate = `${lastDateArr[1]} ${lastDateArr[2]} ${lastDateArr[3]}`        
         let timeStr = (new Date(ms).toLocaleString('en-US', {hour: 'numeric', minute: 'numeric', hour12: true}))
-        dateStr += " "+timeStr
         return (
             <React.Fragment>
-                {thisDate !== lastDate?<div style={this.style.dateContainer}><p style={this.style.dateText}>{thisDate}</p></div>:""}
+                {thisDate !== lastDate?<div style={this.style.dateContainer}><p style={this.style.dateText}>{this.formatDateHead(thisDate, ms)}</p></div>:""}
             
                 <div ref={(o) => {this.element = o}} className={parseInt(this.props.msg.sender) === parseInt(Cookies.get("id"))?"myMsg":"notMyMsg"} style={{width: "100%"}}>
                     <div style={{margin: "0px 10px", marginTop: this.props.reduceMargin?"3px":"15px", padding: "5px 10px", borderRadius: "5px"}}>
