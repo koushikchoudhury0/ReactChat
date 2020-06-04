@@ -38,8 +38,7 @@ class Request extends Component {
         body: { background: "#fefefe", borderRadius: "5px", borderColor: "#eaeaea", borderStyle: "solid", borderWidth: "2px", padding: "10px 15px 5px 15px", marginBottom: "10px"}
     }
 
-    render() {    
-        let dateArr = new Date(parseInt(this.props.data.moment)).toString().split(" ")        
+    render() {                  
         return (
             <div style={this.style.body}>
                 <h6 style={{marginBottom: "5px", fontWeight: "bold", wordBreak: "break-all", fontSize: "16px"}}>{this.props.data.name}</h6>

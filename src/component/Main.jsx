@@ -15,6 +15,7 @@ import RequestList from './RequestList'
 import Input from './Input'
 import Conversation from "./Conversation"
 //import Friend from './Friend';
+import Badge from "@material-ui/core/Badge"
 
 
 class Main extends Component {
@@ -125,7 +126,7 @@ class Main extends Component {
                                     <UserDetails history={this.props.history} socket={this.state.socket} />                                    
                                     <div style={{marginTop: "10px", marginBottom: "10px"}}>
                                         <button className="tabButton selected" onClick={(e) => { this.selectTab(e.currentTarget, 1) }}><span> <ChatIcon /> </span></button>
-                                        <button className="tabButton" onClick={(e) => { this.selectTab(e.currentTarget, 2) }}style={{marginLeft: "10px"}}><span> <RequestIcon /> </span></button>
+                                        <button className="tabButton" onClick={(e) => { this.selectTab(e.currentTarget, 2) }}style={{marginLeft: "10px"}}><span> <Badge badgeContent={this.state.friendRequests===undefined?0:this.state.friendRequests.length} color="secondary"> <RequestIcon /> </Badge> </span></button>
                                         {/* {this.state.selectedTab === 2?
                                             <React.Fragment>
                                                 <Fab onClick={ ()=>{ this.foo.openDialog() } } variant="extended" size="small" color="secondary" style={{fontSize: "10px", outline: "none", border: "none", marginLeft: "20px"}} > <AddIcon /></Fab>                                                                                            
