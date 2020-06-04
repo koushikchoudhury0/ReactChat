@@ -13,7 +13,7 @@ class Msg extends Component {
 
     style = {
         dateContainer: { width: "100%", textAlign: "center", position: "sticky", top: "0" },
-        dateText: { borderRadius: "5px", background: "#7b8c94", color: "white", fontSize: "12px", display: "inline-block", padding: "2px 10px" }
+        dateText: { width: "90px", fontWeight: "bold", borderRadius: "5px", background: "#7b8c94", color: "white", fontSize: "12px", display: "inline-block", padding: "2px 10px" }
     }
 
     renderMsg = (lim) => {        
@@ -22,7 +22,7 @@ class Msg extends Component {
         }
         let len = this.props.msg.content.length;
         if (len>lim)
-            return ([this.props.msg.content.substring(0, 50), "...", <span onClick={()=>{this.setState({expanded: true})}} className="more">Show More</span>])
+            return ([this.props.msg.content.substring(0, 50), "...", <span key="none" onClick={()=>{this.setState({expanded: true})}} className="more">Show More</span>])
         else
             return (this.props.msg.content)        
     }
@@ -46,8 +46,8 @@ class Msg extends Component {
         let dateArr = new Date(ms).toString().split(" ")                
         let lastMs = parseInt(String(this.props.lastMoment).substring(0, 13))
         let lastDateArr = new Date(lastMs).toString().split(" ")
-        let thisDate = `${dateArr[1]} ${dateArr[2]} ${dateArr[3]}`
-        let lastDate = `${lastDateArr[1]} ${lastDateArr[2]} ${lastDateArr[3]}`        
+        let thisDate = `${parseInt(dateArr[2])} ${dateArr[1]} ${dateArr[3]}`
+        let lastDate = `${parseInt(lastDateArr[2])} ${lastDateArr[1]} ${lastDateArr[3]}`        
         let timeStr = (new Date(ms).toLocaleString('en-US', {hour: 'numeric', minute: 'numeric', hour12: true}))
         return (
             <React.Fragment>
