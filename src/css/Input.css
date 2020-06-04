@@ -1,0 +1,8 @@
+textarea{
+    transition: 0.5s;
+}
+
+textarea:disabled{
+    background: white !important;
+    opacity: 0.5;
+}

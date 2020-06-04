@@ -1,0 +1,29 @@
+.notMyMsg{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.myMsg{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.notMyMsg div{
+    background: #82b2ca66;    
+    max-width: 50%;
+    width: fit-content;
+}
+
+.myMsg div{
+    background: #f5f5f5;    
+    max-width: 50%;
+    width: fit-content;
+}
+
+.more{
+    color: #0174ad;
+    font-weight: bold;
+    font-size: 12px;
+    margin-left: 10px;
+    cursor: pointer;
+}
