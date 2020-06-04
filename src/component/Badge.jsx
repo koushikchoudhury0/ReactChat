@@ -5,7 +5,7 @@ class Badge extends Component {
 
     style = {
         badge: {
-            display: "inline", background: "#3e617b", color: "white", borderRadius: "15px", padding: "3px 8px", fontSize: "12px"
+            display: "inline", background: "#5e92b9", fontWeight: "bold", color: "white", borderRadius: "15px", padding: "3px 8px", fontSize: "12px"
         }
     }
 
