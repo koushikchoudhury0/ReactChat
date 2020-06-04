@@ -13,7 +13,7 @@ class Msg extends Component {
 
     style = {
         dateContainer: { width: "100%", textAlign: "center", position: "sticky", top: "0" },
-        dateText: { width: "90px", fontWeight: "bold", borderRadius: "5px", background: "#7b8c94", color: "white", fontSize: "12px", display: "inline-block", padding: "2px 10px" }
+        dateText: { width: "100px", borderRadius: "5px", background: "#7b8c94", color: "white", fontSize: "12px", display: "inline-block", padding: "2px 10px" }
     }
 
     renderMsg = (lim) => {        
@@ -36,7 +36,7 @@ class Msg extends Component {
             console.log(parseInt(srcDateArr[0]), "-", parseInt(thisDateArr[0]))
             let diffDays = Math.abs(parseInt(srcDateArr[0]) - parseInt(thisDateArr[0]))
             if (diffDays==0) return "Today"
-            else if (diffDays==1) return "Yesterday"
+            else if (diffDays==1) return "Yesterday"            
             else return thisDate
         }      
     }
