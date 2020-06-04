@@ -119,9 +119,9 @@ class Main extends Component {
                         <div className="col-lg-8" style={{padding: "0", height: "100%", position: "relative"}}>
                             {this.renderChatWindow()}
                         </div>
-                        <div className="col-lg-4" id="panel-window" style={{background: "#fff", height: "100%", maxHeight: "100%", overflowY: "hidden", padding: "0"}}>
+                        <div className="col-lg-4" id="panel-window" style={{background: "transparent", height: "100%", maxHeight: "100%", overflowY: "hidden", padding: "0"}}>
                             <div style={{padding: "0px 10px", height: "100%"}}>                                
-                                <div style={{height: "24%", background: "#ffffff", paddingBottom: "5px"}}>
+                                <div style={{height: "26%", background: "transparent", paddingBottom: "5px"}}>
                                     <UserDetails history={this.props.history} socket={this.state.socket} />                                    
                                     <div style={{marginTop: "10px", marginBottom: "10px"}}>
                                         <button className="tabButton selected" onClick={(e) => { this.selectTab(e.currentTarget, 1) }}><span> <ChatIcon /> </span></button>
@@ -134,7 +134,7 @@ class Main extends Component {
                                             ""} */}                                    
                                     </div>
                                 </div>
-                                <div style={{overflowY: "hidden", height: "76%", marginTop: "0px"}}>
+                                <div style={{overflowY: "hidden", height: "74%", marginTop: "0px"}}>
                                     {this.state.selectedTab === 1?
                                         <ChatList current={this.state.currentFriend} chatClickCallback={this.onChatClick} history={this.props.history} socket={this.state.socket} chats={this.state.chats} handleIncomingChat={this.incomingChatCallback} />
                                         :
