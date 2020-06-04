@@ -33,7 +33,7 @@ class RequestList extends Component {
                             <Request key={request.id} data={request} socket={this.props.socket} removeCallback={this.handleRequestRemoval}/>  
                         ))}
                 </div>
-                <Fab onClick={() => { this.reqDialog.openDialog() }} variant="extended" size="small" color="secondary" style={{position: "absolute", bottom: "10px", right: "10px", outline: "none", border: "none", fontSize: "14px", paddingRight: "15px", paddingLeft: "15px", textTransform: "none"}} > <AddIcon style={{fontSize: "20px", marginRight: "5px"}} /> New Request </Fab>
+                <Fab onClick={() => { this.reqDialog.openDialog() }} variant="extended" size="small" color="secondary" style={{position: "absolute", bottom: "15px", right: "15px", outline: "none", border: "none", fontSize: "14px", paddingRight: "15px", paddingLeft: "15px", textTransform: "none"}} > <AddIcon style={{fontSize: "20px", marginRight: "5px"}} /> New Request </Fab>
                 <RequestDialog socket={this.props.socket} ref={(o) => { this.reqDialog = o }} />
             </div>
             
