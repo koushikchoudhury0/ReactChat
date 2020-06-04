@@ -8,6 +8,7 @@ import AddIcon from "@material-ui/icons/Add"
 import RequestDialog from "./RequestDialog"
 
 class RequestList extends Component {
+
     state = {}    
 
     handleRequestRemoval = (reqId) => {
@@ -16,7 +17,7 @@ class RequestList extends Component {
     }
 
     render() { 
-        console.log("rendering requestlist: ", this.props)
+        //console.log("rendering requestlist: ", this.props)
         return (
             <div style={{position: "relative", height: "100%", overflowY: "hidden"}}>
                 <div className="customScroll" style={{height: "100%", overflowY: "scroll", paddingRight: "5px", paddingBottom: "80px"}}>

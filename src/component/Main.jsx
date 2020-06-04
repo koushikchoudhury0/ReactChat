@@ -162,11 +162,11 @@ class Main extends Component {
             socket.emit("establish", {uid: Cookies.get("id")}, (data) => {
                 //console.log("Estd: ", data)
                 socket.emit("get-all-chats", {uid: Cookies.get("id")}, (chats) => {
-                    console.log("all-chats from server: ", chats)                    
+                    //console.log("all-chats from server: ", chats)                    
                     this.setState({chats: chats})
                 })
                 socket.emit("get-all-friend-requests", {uid: Cookies.get("id")}, (requests) => {
-                    //console.log(requests)
+                    console.log(requests)
                     this.setState({friendRequests: requests})
                 }) 
             })
