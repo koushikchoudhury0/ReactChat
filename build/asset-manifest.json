@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/static/css/main.363e0766.chunk.css",
+    "main.js": "/static/js/main.3dff670d.chunk.js",
+    "main.js.map": "/static/js/main.3dff670d.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.d5518f00.js",
+    "runtime-main.js.map": "/static/js/runtime-main.d5518f00.js.map",
+    "static/css/2.829c9cb5.chunk.css": "/static/css/2.829c9cb5.chunk.css",
+    "static/js/2.abb291af.chunk.js": "/static/js/2.abb291af.chunk.js",
+    "static/js/2.abb291af.chunk.js.map": "/static/js/2.abb291af.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.cb1ceb717d794f278cc70058e0cc2233.js": "/precache-manifest.cb1ceb717d794f278cc70058e0cc2233.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.829c9cb5.chunk.css.map": "/static/css/2.829c9cb5.chunk.css.map",
+    "static/css/main.363e0766.chunk.css.map": "/static/css/main.363e0766.chunk.css.map",
+    "static/js/2.abb291af.chunk.js.LICENSE.txt": "/static/js/2.abb291af.chunk.js.LICENSE.txt",
+    "static/media/ChatBox.svg": "/static/media/ChatBox.4d9f87f4.svg",
+    "static/media/SpiralArrowDown.png": "/static/media/SpiralArrowDown.2d65758e.png",
+    "static/media/comment.svg": "/static/media/comment.455a0a37.svg",
+    "static/media/heroku.svg": "/static/media/heroku.7df930e9.svg",
+    "static/media/mongodb.png": "/static/media/mongodb.4fe5b11d.png",
+    "static/media/nodejs.png": "/static/media/nodejs.c502658a.png",
+    "static/media/react.svg": "/static/media/react.5d5d9eef.svg",
+    "static/media/socketio.svg": "/static/media/socketio.5dc4ade3.svg",
+    "static/media/socketio.png": "/static/media/socketio.9c2629c4.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d5518f00.js",
+    "static/css/2.829c9cb5.chunk.css",
+    "static/js/2.abb291af.chunk.js",
+    "static/css/main.363e0766.chunk.css",
+    "static/js/main.3dff670d.chunk.js"
+  ]
+}
