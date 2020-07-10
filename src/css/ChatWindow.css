@@ -1,0 +1,10 @@
+.no-msg-container{
+    text-align: center;
+    margin-top: 25vh;
+}
+
+.no-msg-container p{
+    opacity: 0.6;
+    font-family: Montserrat;
+}
+

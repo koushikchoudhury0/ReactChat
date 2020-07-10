@@ -6,12 +6,15 @@ import Main from "./component/Main"
 import ProtectedRoute from "./routing/ProtectRoute"
 import Landing from './component/Landing';
 import "./css/Main.css"
+import { SocketContext } from './context/SocketContext';
 
 function App() {
   return (
       <Switch>
         <Route exact path="/land" component={Landing}/>        
-        <ProtectedRoute exact path="/" component={Main} />
+        <ProtectedRoute exact path="/" component={
+          Main          
+        } />
       </Switch>
   );
 }

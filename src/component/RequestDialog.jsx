@@ -8,9 +8,12 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Cookies from "js-cookie"
+import {SocketContext} from "../context/SocketContext"
 
 export default class RequestDialog extends Component {
   
+  static contextType = SocketContext
+
   state = { open: false, progress: false }
 
   openDialog = () => {
@@ -25,7 +28,7 @@ export default class RequestDialog extends Component {
 
   sendRequest = (targetUsername) => {
     this.setState({progress: true})
-    this.props.socket.emit("publish-friend-request", {sender: Cookies.get("id"), receiver: targetUsername}, (data) => {
+    this.context.socket.emit("publish-friend-request", {token: Cookies.get("token"), receiverUsername: targetUsername}, (data) => {
       console.log(data)
       this.setState({progress: false})
       if (data.statusCode===1){

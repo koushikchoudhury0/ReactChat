@@ -1,11 +1,14 @@
-.notMyMsg{
+.msg{
+    width: 100%;
     display: flex;
-    justify-content: flex-start;
+}
+
+.notMyMsg{
+    justify-content: flex-start;    
 }
 
 .myMsg{
-    display: flex;
-    justify-content: flex-end;
+    justify-content: flex-end;    
 }
 
 .notMyMsg div{
@@ -26,4 +29,49 @@
     font-size: 12px;
     margin-left: 10px;
     cursor: pointer;
+}
+
+.dateContainer{
+    width: 100%;
+    text-align: center;
+    position: sticky;
+    top: 0;    
+}
+
+.dateText{
+    width: 100px;
+    border-radius: 5px;
+    background: #7b8c94;
+    color: white;
+    font-size: 13px;
+    display: inline-block;
+    padding: 2px 10px;
+    font-family: Quicksand;
+    font-weight: bold;
+}
+
+.msgPrimary{
+    margin: 0px 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-top: 15px
+}
+
+.msgPrimary.noMargin{
+    margin-top: 3px;
+}
+
+.msgContent{
+    white-space: pre-wrap;
+    margin-bottom: 2px;
+    font-size: 14px;
+    word-break: break-word;
+    font-family: Quicksand;
+    font-size: 13px;
+}
+
+.timeText{
+    text-align: end;
+    margin-bottom: 0px;
+    font-size: 10px;
 }

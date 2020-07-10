@@ -1,0 +1,88 @@
+.not-selected{
+    padding-bottom: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 5px;
+    padding-top: 8px;
+    background: #e0dfdf1f;
+    border-radius: 5px;
+    border-color: #eaeaea;
+    border-style: solid;
+    border-width: 2px;
+    transition: 0.3s;
+    opacity: 1 !important;
+}
+
+.selected{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 8px; 
+    transition: 0.3s; 
+    border-radius: 0; 
+    border-color: transparent; 
+    border-style: solid; 
+    border-width: 2px; 
+    position: sticky; 
+    top: 0; 
+    bottom: 0; 
+    background: white;      
+    padding-left: 3px; 
+    opacity: 1 !important;
+}
+
+.user-full-name{
+    margin-bottom: 0;
+    font-weight: bold;
+    word-break: break-all;
+    transition: 0.3s;
+    font-size: 15px;
+    font-family: Montserrat;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.selected .user-full-name{
+    color: #4a6f98;
+    font-size: 17px;
+}
+
+.no-preview{
+    font-size: 14px;
+    margin-bottom: 0;
+    opacity: 0.7;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.no-preview span{
+    font-weight: bold;
+    font-size: 12px;
+    font-family: Montserrat;
+    letter-spacing: 0.6px;
+    opacity: 0.8;
+    color: blueviolet;
+}
+
+.preview{
+    margin-bottom: 0;
+    opacity: 0.7;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: 0.3s;
+    font-size: 13px;
+    margin-top: 2px;
+    font-family: Montserrat;
+}
+
+.selected .preview{
+    color: black;
+    font-size: 14px;
+}
+
+.preview span{
+    font-weight: bold;
+    font-size: 12px;
+}

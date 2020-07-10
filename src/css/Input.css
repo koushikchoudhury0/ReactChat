@@ -1,8 +1,40 @@
 textarea{
     transition: 0.5s;
+    overflow: hidden;
+    resize: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 90%;
+    outline: none;
+    border: none;
+    margin-left: 3%;
+    height: 90%;
+    line-height: 14px;
+    margin-top: 3px;
+    padding-top: 14px;
+    font-family: Oxygen;    
 }
 
 textarea:disabled{
     background: white !important;
     opacity: 0.5;
+}
+
+.sendButton{
+    position: absolute !important;
+    top: 0;
+    right: 2px;
+    height: 100%;
+    border: none !important;
+    outline: none !important;
+}
+
+.progress{
+    height: 1rem !important;
+    width: 1rem !important;
+    position: absolute;
+    top: 35%;
+    right: 10px;
+    background: transparent;
 }

@@ -14,11 +14,73 @@
     color: #01537c;
 }
 
-.tabButton.selected{
+.tabButton.tabSelected{
     border-bottom-color: #01537c !important;
     border-bottom-style: solid;
     border-bottom-width: 2px;
 }  
+
+.tabs{
+    margin-top: 5px;
+}
+
+#panel-window{
+    background: transparent;
+    height: 100%;
+    max-height: 100%;
+    overflow-y: hidden;
+    padding: 0;
+}
+
+#panel-window .header{
+    height: 26%;
+    background: transparent;
+    padding-bottom: 5px;
+    padding-right: 9px;
+}
+
+.panelWindowContainer{
+    padding: 0px 10px;
+    height: 100%;
+}
+
+.listContainer{
+    overflow-y: hidden;
+    height: 74%;
+    margin-top: 0px;
+}
+
+.listContainerPrimary{
+    height: 100%;
+}
+
+.shown{
+    display: block;
+}
+
+.hidden{
+    display: none;
+}
+
+.chatWindowContainer{
+    padding: 0;
+    height: 100%;
+    position: relative;
+}
+
+.progressContainer{
+    text-align: center;
+    margin-top: 45vh;
+}
+
+.primaryContainer{
+    padding: 50px 10px;
+    height: 100vh;
+}
+
+.primaryRow{
+    height: 100%;
+}
 
 /* .side-panel-scroll{
     overflow-y: scroll
@@ -33,6 +95,6 @@
 }
  
 .side-panel-scroll::-webkit-scrollbar-thumb {
-  background-color: rgba(128, 0, 128, 0.1);
+  background-color: rgba(128;0;128;0.1);
   outline: 1px solid slategrey;  
 } */

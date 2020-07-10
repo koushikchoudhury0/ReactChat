@@ -43,10 +43,10 @@ class Landing extends Component {
     loginPromise = async(username, password) => {
         try{
             let data = await this.login(username, password)
+            Cookies.set("uid", data.uid, {expires: 86400, path: "/"})
             Cookies.set("token", data.token, {expires: 86400, path: "/"})
             Cookies.set("name", data.name, {expires: 86400, path: "/"})
-            Cookies.set("username", data.username, {expires: 86400, path: "/"})
-            Cookies.set("id", data.id, {expires: 86400, path: "/"})
+            Cookies.set("username", data.username, {expires: 86400, path: "/"})            
             this.props.history.push("/")    
         } catch(msg) {
             window.alert(msg)

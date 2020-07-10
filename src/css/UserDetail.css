@@ -1,0 +1,50 @@
+.primary{
+    border-color: #039be530;
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.name{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
+    font-family: Montserrat;
+}
+
+.username{
+    margin: 0;
+    font-size: 13px;
+    font-family: Montserrat;
+}
+
+.username span{
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.logout{
+    display: inline-block;
+    border-radius: 3px;
+    padding: 2px 8px;
+    margin-top: 5px;
+    margin-bottom: 0;
+    font-size: 12px;
+    background: rgb(241, 102, 52);
+    color: white;
+    cursor: pointer;
+    font-family: Montserrat;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    transition: 0.3s;   
+    box-shadow: #bdbdbd 1px 1px 5px;
+    font-weight: bold;     
+}
+
+.logout:hover{
+    color: white;
+    background: rgb(226, 84, 32);
+    box-shadow: #bdbdbd 1px 1px 1px;
+}

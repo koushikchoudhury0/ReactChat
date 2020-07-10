@@ -4,8 +4,16 @@ import SendIcon from "@material-ui/icons/SendRounded"
 import IconButton from "@material-ui/core/IconButton"
 import CircularProgress from "@material-ui/core/CircularProgress"
 import "../css/Input.css"
+import {SocketContext} from "../context/SocketContext"
 
 class Input extends Component {
+
+    static contextType = SocketContext
+    /* constructor(props) {
+        super(props)
+        console.log("Input Props: ", props)
+    } */
+
     state = { 
         visibility: 0 //0: nothing, 1: button, 2: progress 
     }
@@ -15,13 +23,13 @@ class Input extends Component {
         if (text.length === 0) return
         this.textInput.disabled = true   
         this.setState({visibility: 2})     
-        this.props.socket.emit("send-msg", {uid: Cookies.get("id"), to: this.props.to, content: text}, (data) => {
+        this.context.socket.emit("send-msg", {token: Cookies.get("token"), targetUid: this.props.targetUid, content: text, type: "text"}, (data) => {
             this.setState({visibility: 0})
             this.textInput.disabled = false
             if (data.statusCode === 0){
                 window.alert("Error Occured")
             } else {
-                this.props.onMsgSent(data.msg)
+                //this.props.onMsgSent(data.msg)
                 document.getElementById("text").value = ''
                 document.getElementById("text").focus()
             }
@@ -32,13 +40,13 @@ class Input extends Component {
         switch(this.state.visibility){
             case 1:
                 return (
-                    <IconButton onClick={()=>{this.sendMsg()}} style={{position: "absolute", top: "0", right: "2px", width: "5%", height: "100%", border: "none", outline: "none"}} aria-label="delete">
-                        <SendIcon style={{transform: "translateY(-6px)"}} />                        
+                    <IconButton className="sendButton" onClick={()=>{this.sendMsg()}} aria-label="delete">
+                        <SendIcon/>                        
                     </IconButton>
                 )                
             case 2:
                 return (
-                    <CircularProgress style={{height: "1rem", width: "1rem", position: "absolute", top: "9px", right: "10px"}} />
+                    <CircularProgress className="progress" />
                 )                
             default:
                 return("")
@@ -63,9 +71,16 @@ class Input extends Component {
 
     render() { 
         return (
-            <div style={{padding: "10px 10px", width: "100%", height: "10%", position: "absolute", bottom: "0", display: "table"}}>
-                <div style={{height:"2.5rem", background: "white", display: "table-cell", verticalAlign: "middle", borderRadius: "50px", borderStyle: "solid", borderColor: "#32708e96", position: "relative"}}>
-                    <textarea ref={(o)=>{this.textInput = o}} onKeyDown={(e) => {this.handleKeyDown(e)}} onChange={(e) => {this.handleChange(e)}} id="text" placeholder="Write a message" style={{overflow: "hidden", resize: "none", position: "absolute", left: "0", top: "0", width: "90%", outline: "none", border: "none", marginLeft: "3%", height: "2rem", lineHeight: "14px", paddingTop: "10px"}} maxLength={1000}></textarea>                                        
+            <div style={{width: "100%", height: "10%", position: "absolute", bottom: "0", display: "table", background: "aliceblue"}}>
+                <div style={{height:"2.5rem", background: "white", display: "table-cell", verticalAlign: "middle", borderRadius: "10px", borderStyle: "solid", borderColor: "#32708e96", position: "relative"}}>
+                    <textarea 
+                        ref={(o)=>{this.textInput = o}} 
+                        onKeyDown={(e) => {this.handleKeyDown(e)}} 
+                        onChange={(e) => {this.handleChange(e)}} 
+                        id="text" 
+                        placeholder="Write message here ..." 
+                        maxLength={1000}>
+                    </textarea>                                        
                     {this.renderSend()}                                        
                 </div>                                
             </div>

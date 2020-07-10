@@ -15,3 +15,29 @@
   outline: 1px solid slategrey;    
   border-radius: 50px;
 }
+
+.placeholder{
+    margin-top: 25%;
+    text-align: center;
+}
+
+.placeholder h6{
+    margin-top: 15px;
+    font-family: Montserrat;
+    opacity: 0.6;
+}
+
+.placeholder p.first{
+    margin-top: 30px;
+}
+
+.placeholder p{
+    font-size: 12px;
+    font-family: Montserrat;
+    opacity: 0.6;
+    margin-bottom: 0;
+}
+
+.placeholder p span{
+    font-weight: bold;
+}
